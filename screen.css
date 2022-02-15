@@ -1,6 +1,21 @@
+h1 {
+  display: inline-block;
+}
+p {
+  display: inline-block;
+}
 div {
-  width: 3em;
-  border: 5em solid blue;
-  padding: 1em;
+  width: 9em !important;
+  border: 1em solid #0000;
+  padding: 3em;
   margin: 1em;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-left: -0.4;
+  margin-top: -0.4;
 }
