@@ -4,18 +4,60 @@ h1 {
 p {
   display: inline-block;
 }
-div {
-  width: 9em !important;
-  border: 1em solid #0000;
+/*div {
+  width: 5em !important;
+  border: 1em solid red;
   padding: 3em;
-  margin: 1em;
+  margin: auto;
   display: flex;
   position: absolute;
-  top: 50%;
-  left: 50%;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  margin-left: -0.4;
-  margin-top: -0.4;
+  text-align: left;
+  margin-left: -0em;
+  margin-top: -0em;
+}*/
+
+div.a{
+   /*font-family: 'Dongle', sans-serif;*/
+   font-size: 2.2em;
+   text-decoration: underline;
+}
+div.b{
+   /*font-family: 'Dongle', sans-serif;*/
+   font-size: 1.21em;
+}
+div.c{
+   /*font-family: 'Nunito', sans-serif;*/
+   font-size: 1.53em;
+   text-decoration: underline;
+}
+div.d{
+   /*font-family: 'Nunito', sans-serif;*/
+   font-size: 0.68em;
+}
+
+.pquote {
+   float: left;
+   width: 6em;
+   background: #3EB489;
+   font-weight: bold;
+   padding: 0.81em;
+   margin: 0 6em 6em 0;
+}
+
+blockquote {
+   margin: 0; /* gets rid of the default blockquote margin */
+}
+
+.flex-container {
+  display: flex;
+  background-color: DodgerBlue;
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
 }
