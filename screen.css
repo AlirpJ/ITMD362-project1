@@ -25,7 +25,7 @@ div.a{
 }
 div.b{
    /*font-family: 'Dongle', sans-serif;*/
-   font-size: 1.21em;
+   font-size: 1em;
 }
 div.c{
    /*font-family: 'Nunito', sans-serif;*/
@@ -34,7 +34,7 @@ div.c{
 }
 div.d{
    /*font-family: 'Nunito', sans-serif;*/
-   font-size: 0.68em;
+   font-size: 0.60em;
 }
 
 .pquote {
@@ -52,11 +52,13 @@ blockquote {
 
 .flex-container {
   display: flex;
-  background-color: DodgerBlue;
+  background-color: #cc0000;
+  opacity: 0.33;
 }
 
 .flex-container > div {
-  background-color: #f1f1f1;
+  background-color: #cc0000;
+  opacity: 0.33;
   margin: 10px;
   padding: 20px;
   font-size: 30px;
