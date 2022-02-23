@@ -2,7 +2,7 @@ h1 {
   display: inline-block;
 }
 p {
-  display: inline-block;
+   font-size: 0.60em;
 }
 /*div {
   width: 5em !important;
@@ -22,54 +22,84 @@ div.a{
    /*font-family: 'Dongle', sans-serif;*/
    font-size: 2.2em;
    text-decoration: underline;
+   color: #000000;
+   text-align: left;
 }
 div.b{
    /*font-family: 'Dongle', sans-serif;*/
    font-size: 1em;
+   color: #000000;
+   text-align: left;
 }
 div.c{
    /*font-family: 'Nunito', sans-serif;*/
    font-size: 1.53em;
    text-decoration: underline;
+   color: #000000;
+   text-align: left;
 }
 div.d{
    /*font-family: 'Nunito', sans-serif;*/
    font-size: 0.60em;
+   color: #000000;
+   text-align: left;
 }
-
-.pquote {
-   float: left;
-   width: 6em;
-   background: #3EB489;
-   font-weight: bold;
-   padding: 0.81em;
-   margin: 0 6em 6em 0;
-}
-
-blockquote {
-   margin: 0; /* gets rid of the default blockquote margin */
-}
-
+/*
 .flex-container {
+  justify-content: center;
   display: flex;
   background-color: #cc0000;
   opacity: 0.33;
+  margin: 2em;
+  padding: 2em;
+  width: 1em;
+  height: 1em;
+}*/
+.flex-container {
+  display: inline-block;
+  /*opacity: 0.33;
+  widows: auto;
+  margin: auto;
+  height: auto;
+  flex-direction: row;*/
+  background-color: #cc0000;
+  padding: 1em;
+  font-size: 1em;
+  left: 40%;
+  position: relative;
+  margin-bottom: 1em;
+  width: 5em;
+  height: 6em;
 }
 
-.flex-container > div {
+.scroll {
+  margin:1em, 1em;
+  display: grid;
+  justify-content: center;
+  text-align: center;
   background-color: #cc0000;
-  opacity: 0.33;
-  margin: 10px;
-  padding: 20px;
-  font-size: 30px;
-}
-div.scroll {
-  margin:4px, 4px;
-  padding:4px;
-  background-color: green;
-  width: 500px;
-  height: 110px;
+  opacity: 1;
+  padding: 2em;
+  width: 10em;
+  height: 10em;
   overflow-x: hidden;
   overflow-y: auto;
   text-align:justify;
+  left: 40%;
+  position: relative;
+  }
+
+button {
+  left: 43%;
+  position: relative;
+}
+#container {
+    justify-content: center;
+    display: grid;
+    background-color: #cc0000;
+    opacity: 0.33;
+    margin: 2em;
+    padding: 2em;
+    width: 1em;
+    height: 1em;
   }
