@@ -40,6 +40,13 @@ div.d{
    text-align: right;
    display: inline-block;
 }
+div.e{
+   /*font-family: 'Nunito', sans-serif;*/
+   font-size: 1em;
+   color: #000000;
+   text-align: center;
+   display: inline-block;
+}
 
 .wrapper {
    display: grid;
@@ -90,7 +97,8 @@ div.d{
 
 .flex-container-l {
   width: 20em;
-  left: 10%;
+  height: 15em;
+  left: 20%;
 }
 
 .scroll-r {
