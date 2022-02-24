@@ -47,6 +47,13 @@ div.e{
    text-align: center;
    display: inline-block;
 }
+div.f{
+   /*font-family: 'Nunito', sans-serif;*/
+   font-size: 0.5em;
+   color: #000000;
+   text-align: center;
+   display: inline-block;
+}
 
 .wrapper {
    display: grid;
@@ -67,8 +74,8 @@ div.e{
   font-size: 1em;
   position: relative;
   margin-bottom: 2em;
-  width: 10em;
-  height: 6.5em;
+  width: 9em;
+  height: 7em;
 }
 
 .scroll, .scroll-r {
@@ -96,9 +103,16 @@ div.e{
   }
 
 .flex-container-l {
+  top: 1em;
   width: 20em;
-  height: 15em;
+  height: 11em;
   left: 25%;
+}
+.flex-container-ll {
+  top: 1em;
+  width: 20em;
+  height: 11em;
+  left: 10%;
 }
 
 .scroll-r {
@@ -107,9 +121,15 @@ div.e{
 
 button {
   top: 10em;
-  left: 42%;
+  margin: 0 auto;
   display: grid;
   position: relative;
+}
+
+input[type="submit"] {
+  top: 10em;
+  top: 10em;
+  margin: 0 auto;
 }
 
 #container {

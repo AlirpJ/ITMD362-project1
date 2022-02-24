@@ -12,12 +12,11 @@
 <header id ="header">
   <div class="a">TechYeah! Shopping</div>
 </header>
-
-<div class="c">My Cart</div>
-
+<div class="c">Step 3/3</div>
 <div class="wrapper">
 <div class="flex-container-r">
   <div>
+    <div class="c">My Cart</div>
     <div class = 'b'>Subtotal: </div>
     <div class = 'd'>$99.00</div>
     <br></br>
@@ -54,10 +53,25 @@
    <option value="tech">TechCash</option>
 </select>
 <li>
-  <label for="name">Name</label>
+  <label for="name">Full Name</label>
   <input type="text" name="name" id="name" />
 </li>
-
+<li>
+  <label for="card">Card Number</label>
+  <input type="number" name="card" id="card" />
+  </li>
+<li>
+  <label for="sec">Security Code</label>
+  <input type="number" name="sec" id="sec" style="width: 3em" />
+</li>
+<li>
+  <input type="checkbox" id="ship" name="ship" value="Shipping">
+  <label for="ship">Same as billing address</label>
+</li>
+<li>
+<input type="submit" value="Edit Address" onclick="location.href = 'http://127.0.0.1:8080/address';"></button>
+<div class = 'f'>123 Sample Address, IL</div>
+</li>
   </div>
 
 </div>
@@ -67,6 +81,6 @@
 </div>
 
 
-<button type="button" onclick="location.href = 'http://127.0.0.1:8080/shipping';">Continue to Shipping</button>
+<button type="button" onclick="location.href = 'http://127.0.0.1:8080/';">Checkout</button>
 
 </html>
