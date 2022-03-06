@@ -14,7 +14,7 @@ flex: 1 1 auto;
 */
 
 h3 {
-  font-size: 0.8em;
+  font-size: 0.75em;
   text-align: center;
 }
 h4 {
@@ -32,17 +32,17 @@ li {
   list-style-type: none;
 }
 
-section {
+section, section3 {
    display: grid;
    grid-template-columns: repeat(2, 1fr);
    grid-template-rows: repeat(3, 100px);
 }
 
 .flex-container,
-.flex-container-r,
-.flex-container-l,
+aside-r,
+section2, section3
 .flex-container-2,
-aside
+aside, aside-l
 {
   display: grid;
   left: 40%;
@@ -56,7 +56,7 @@ aside
   height: 7.2em;
 }
 
-.scroll, .scroll-r, aside2 {
+.scroll, aside2-r, aside2 {
   display: grid;
   justify-content: center;
   text-align: center;
@@ -73,39 +73,42 @@ aside
   margin-bottom: 5em;
   }
 
-.flex-container-r {
+aside-r {
   left: 36.5em;
   }
 .flex-container-2 {
   left: -40%;
   }
 
-.flex-container-l {
+section2, section3 {
   top: 1em;
   width: 20em;
-  height: 11em;
+  height: 13em;
   left: 25%;
 }
-.flex-container-ll {
+section3 {
+  height: 12em;
+}
+aside-ll {
   top: 1em;
   width: 20em;
   height: 11em;
-  left: 10%;
+  left: 15em;
 }
 
-.scroll-r {
+aside2-r {
   left: 0em;
   }
 
 button {
   top: 10em;
   margin: 0 auto;
+  left: -5em;
   display: grid;
   position: relative;
 }
 
 input[type="submit"] {
-  top: 10em;
   top: 10em;
   margin: 0 auto;
 }
