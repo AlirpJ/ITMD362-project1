@@ -13,21 +13,7 @@ You need:
 display: flex;
 flex: 1 1 auto;
 */
-.pbutton {
-  -webkit-appearance: button;
-  -moz-appearance: button;
-  appearance: button;
 
-  padding: 0.5em 0.5em; /* 8px / 16px */
-  line-height: 2.625em; /* 42px / 16px = 2.625em */
-  color: initial;
-
-  top: 6em;
-  margin: 0 auto;
-  left: 49em;
-  display: grid;
-  position: relative;
-}
 a,b {
   font-family: inherit;
   text-decoration: none;
@@ -36,6 +22,7 @@ a,b {
 h3 {
   font-size: 0.75em;
   text-align: center;
+  border: 0;
 }
 h4 {
   font-size: 0.2em;
@@ -43,35 +30,20 @@ h4 {
 }
 p {
    /*font-family: 'Nunito', sans-serif;*/
-   font-size: 0.55em;
+   font-size: 0.6em;
    color: #000000;
    text-align: right;
    display: inline-block;
 }
-.addbutton {
-  -webkit-appearance: button;
-  -moz-appearance: button;
-  appearance: button;
-
-  padding: 0.9em 0em;
-  line-height: 0.1em; /* 42px / 16px = 2.625em */
-  color: initial;
-
-  top: 0em;
-  margin: 0 auto;
-  left: 0em;
-  display: grid;
-  position: relative;
+c {
+   /*font-family: 'Nunito', sans-serif;*/
+   font-size: 1em;
+   color: #000000;
+   text-align: left;
+   display: inline-block;
+   line-height: 200%;
 }
-.pbutton2 {
-  -webkit-appearance: button;
-  -moz-appearance: button;
-  appearance: button;
 
-  padding: 0.5em 0.5em; /* 8px / 16px */
-  line-height: 2.625em; /* 42px / 16px = 2.625em */
-  color: initial;
-}
 input[type="number"] {
   -moz-appearance: textfield;
 }
@@ -79,15 +51,19 @@ li {
   list-style-type: none;
 }
 
-section, section3 {
+section, section3, section4 {
    display: grid;
    grid-template-columns: repeat(2, 1fr);
    grid-template-rows: repeat(3, 100px);
 }
+aside2 {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
 
 .flex-container,
 aside-r,
-section2, section3, sectionl2
+section2, section3, section4,
 .flex-container-2,
 aside, aside-l
 {
@@ -127,17 +103,17 @@ aside-r {
   left: -40%;
   }
 
-section2, sectionl2, section3 {
+section2, section3 {
   top: 1em;
   width: 20em;
   height: 13em;
   left: 25%;
 }
-sectionl2 {
-  top: 1em;
+section4 {
+  top: -6.2em;
   width: 20em;
-  height: 30em;
-  left: 25%;
+  height: 22em;
+  left: 12em;
 }
 section3 {
   height: 12em;
@@ -173,4 +149,31 @@ input[type="submit"] {
     padding: 2em;
     width: 1em;
     height: 1em;
+  }
+
+/* Buttons */
+.pbutton {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+
+  padding: 0.5em 0.5em; /* 8px / 16px */
+  line-height: 2.625em; /* 42px / 16px = 2.625em */
+  color: initial;
+
+  top: 7em;
+  margin: 0 auto;
+  left: -4.5em;
+  width: 9em;
+  display: grid;
+  position: relative;
+  }
+.pbutton2 {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+
+  padding: 0.5em 0.5em; /* 8px / 16px */
+  line-height: 2.625em; /* 42px / 16px = 2.625em */
+  color: initial;
   }
