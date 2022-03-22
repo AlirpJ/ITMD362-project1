@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="billing">
 <head>
   <title></title>
   <meta charset="utf-8" />
@@ -13,8 +13,8 @@
   <h1>TechYeah! Shopping</h1>
 </header>
 
-<h2>Step 2/3</h2>
-<form name="ship" action="preview/" method="get" aria-live="polite" aria-relevant="additions">
+<h2>Step 3/3</h2>
+<form name="bill" action="preview/" method="get" aria-live="polite" aria-relevant="additions">
 <section>
 
   <aside-r>
@@ -48,12 +48,44 @@
   <p>Item 5: [pic] [desc]</p>
 </list>
 </aside2-r>
-<section2>
 
+<sectionl2>
+<aside-ll>
 
-  <aside-ll>
-    <h3>Shipping</h3>
+    <h3>Payment Options</h3>
+
+  <select name="paymentOption" id="pay">
+   <option value="card">Card</option>
+   <option value="paypal">Paypal</option>
+   <option value="tech">TechCash</option>
+</select>
+<li>
+  <label for="name">Full Name</label>
+  <input type="text" name="name" id="name" />
+</li>
+<li>
+  <label for="card">Card Number</label>
+  <input type="number" name="card" id="card" />
+  </li>
+<li>
+  <label for="sec">Security Code</label>
+  <input type="number" name="sec" id="sec" style="width: 3em" />
+</li>
+<li>
+  <input type="checkbox" id="ship" name="ship" value="Shipping">
+  <label for="ship">Same as billing address</label>
+</li>
+<li>
+<p>123 Sample Address, IL</p>
+</li>
+
+  <list>
+    <div class="e">Shipping</div>
     <label for="cars"></label>
+<li>
+  <input type="checkbox" id="ship" name="ship" value="Shipping">
+  <label for="ship">Same as billing address</label>
+</li>
 <li>
   <label for="name">Full Name</label>
   <input type="text" name="name" id="name" />
@@ -66,21 +98,16 @@
   <label for="add2">Address Line 2</label>
   <input type="text" name="add2" id="add2" />
 </li>
-<li>
-  <label for="sec">Security Code</label>
-  <input type="number" name="sec" id="sec" style="width: 3em" />
-</li>
-<li>
-<input type="submit" value="Edit Address" onclick="location.href = '../address/address';"></button>
-<p>123 Sample Address, IL</p>
-</li>
-  </aside-ll>
+</list>
 
 
-</section2>
+</aside-ll>
+</sectionl2>
+
 </section>
+
 </form>
 
-<button type="button" onclick="location.href = '../billing/billing';">Continue</button>
+<a href='../' class="pbutton" id="pbutton">Continue</a>
 <script src="assets/js/site.js"></script>
 </html>

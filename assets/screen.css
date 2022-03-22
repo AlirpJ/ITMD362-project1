@@ -7,12 +7,32 @@ h1 {
 p {
    font-size: 0.60em;
 }
+
 /*
 You need:
 display: flex;
 flex: 1 1 auto;
 */
+.pbutton {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
 
+  padding: 0.5em 0.5em; /* 8px / 16px */
+  line-height: 2.625em; /* 42px / 16px = 2.625em */
+  color: initial;
+
+  top: 6em;
+  margin: 0 auto;
+  left: 49em;
+  display: grid;
+  position: relative;
+}
+a,b {
+  font-family: inherit;
+  text-decoration: none;
+  border-radius: 0.5em; /* 8px / 16px = 0.5em */
+}
 h3 {
   font-size: 0.75em;
   text-align: center;
@@ -28,6 +48,33 @@ p {
    text-align: right;
    display: inline-block;
 }
+.addbutton {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+
+  padding: 0.9em 0em;
+  line-height: 0.1em; /* 42px / 16px = 2.625em */
+  color: initial;
+
+  top: 0em;
+  margin: 0 auto;
+  left: 0em;
+  display: grid;
+  position: relative;
+}
+.pbutton2 {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+
+  padding: 0.5em 0.5em; /* 8px / 16px */
+  line-height: 2.625em; /* 42px / 16px = 2.625em */
+  color: initial;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 li {
   list-style-type: none;
 }
@@ -40,7 +87,7 @@ section, section3 {
 
 .flex-container,
 aside-r,
-section2, section3
+section2, section3, sectionl2
 .flex-container-2,
 aside, aside-l
 {
@@ -80,33 +127,37 @@ aside-r {
   left: -40%;
   }
 
-section2, section3 {
+section2, sectionl2, section3 {
   top: 1em;
   width: 20em;
   height: 13em;
   left: 25%;
 }
+sectionl2 {
+  top: 1em;
+  width: 20em;
+  height: 30em;
+  left: 25%;
+}
 section3 {
   height: 12em;
 }
-aside-ll {
+aside-ll, aside-lll {
   top: 1em;
   width: 20em;
   height: 11em;
+  left: 15em;
+}
+aside-lll {
+  top: 1em;
+  width: 20em;
+  height: 20em;
   left: 15em;
 }
 
 aside2-r {
   left: 0em;
   }
-
-button {
-  top: 10em;
-  margin: 0 auto;
-  left: -5em;
-  display: grid;
-  position: relative;
-}
 
 input[type="submit"] {
   top: 10em;
