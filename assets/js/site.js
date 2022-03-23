@@ -6,13 +6,14 @@ var html = document.querySelector('html');
 // See https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
 html.classList.add('js');
 
-if(html.id === 'payment') {
-  formPayment = document.querySelector('form[name="payment"]');
-  restoreFormDataFromLocalStorage(formPayment.name);
-  formPayment.addEventListener('input', debounce(handleFormInputActivity, 850));
-  formPayment.addEventListener('change', handleFormInputActivity);
-  formPayment.addEventListener('submit', handleFormSubmission);
+if(html.id === 'shipping') {
+  formShip = document.querySelector('form[name="ship"]');
+  restoreFormDataFromLocalStorage(formShip.name);
+  formShip.addEventListener('input', debounce(handleFormInputActivity, 850));
+  formShip.addEventListener('change', handleFormInputActivity);
+  formShip.addEventListener('submit', handleFormSubmission);
 }
+
 
 /*
   Core Functions
