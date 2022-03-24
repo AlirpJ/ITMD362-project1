@@ -43,14 +43,31 @@ function handleFormInputActivity(event) {
   var errorClass = targetElement.name + '-error';
   var errorEl = document.querySelector('.' + errorClass);
 
-  // Regex for validating inputs
-  var ccCheck = /^(?:(4[0-9]{12}(?:[0-9]{3})?)|(5[1-5][0-9]{14})|(6(?:011|5[0-9]{2})[0-9]{12})|(3[47][0-9]{13})|(3(?:0[0-5]|[68][0-9])[0-9]{11})|((?:2131|1800|35[0-9]{3})[0-9]{11}))$/;
   var cvvCheck = /^[0-9]{3,4}$/;
   var zipCheck = /^\d{5}(?:[-\s]\d{4})?$/;
-  var telCheck = /\d{9}/;
 
   if (!inputElements.includes(targetElement.tagName) || targetElement.name === 'billing-address-two' || targetElement.name === 'shipping-address-two' || targetElement.name === 'billing-city' || targetElement.name === 'shipping-city') {
     return; // this is not an element we care about
+
+    if(targetType === 'number' && targetElement.tagName === 'sec') {
+      if (targetElement.value.length < 3) {
+        // Don't add duplicate errors
+        if (!errorEl) {
+          errorText += ' must be at least 3 characters';
+          errorEl = document.createElement('p');
+          errorEl.className = errorClass;
+          errorEl.innerText = errorText;
+          targetElement.before(errorEl);
+          submitButton.disabled = true;
+        }
+      } else {
+        if (errorEl) {
+          errorEl.remove();
+          submitButton.disabled = false;
+        }
+      }
+    }
+
   }
 
 function writeFormDataToLocalStorage(formName, inputElement) {
