@@ -12,9 +12,24 @@ if(html.id === 'shipping') {
   formShip.addEventListener('input', debounce(handleFormInputActivity, 850));
   formShip.addEventListener('change', handleFormInputActivity);
   formShip.addEventListener('submit', handleFormSubmission);
+
+  newAddressFieldset = document.querySelector('fieldset[name="shipping-address"]');
+  newAddressCheckbox = document.querySelector('#shipping-is-billing');
+
+  newAddressFieldset.setAttribute('disabled', 'disabled');
+  newAddressFieldset.setAttribute('aria-hidden', 'true');
+
+  newAddressCheckbox.addEventListener('change', function(event) {
+    // Add logic to set values only on checked state
+    if(event.target.checked) {
+      newAddressFieldset.setAttribute('disabled', 'disabled');
+      newAddressFieldset.setAttribute('aria-hidden', 'true');
+    } else {
+      newAddressFieldset.removeAttribute('disabled');
+      newAddressFieldset.setAttribute('aria-hidden', 'false');
+    }
+  });
 }
-
-
 /*
   Core Functions
 */
@@ -123,4 +138,5 @@ function writeFormDataToLocalStorage(formName, inputElement) {
   event.preventDefault(); // STOP the default browser behavior
   writeFormDataToLocalStorage(targetElement.name); // STORE all the form data
   window.location.href = targetElement.action; // PROCEED to the URL referenced by the form action
+}
 }
