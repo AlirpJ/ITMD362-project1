@@ -30,6 +30,15 @@ if(html.id === 'shipping') {
     }
   });
 }
+
+if(html.id === 'billing') {
+  formPayment = document.querySelector('form[name="bill"]');
+  restoreFormDataFromLocalStorage(formPayment.name);
+  formPayment.addEventListener('input', debounce(handleFormInputActivity, 850));
+  formPayment.addEventListener('change', handleFormInputActivity);
+  formPayment.addEventListener('submit', handleFormSubmission);
+}
+
 /*
   Core Functions
 */
@@ -66,10 +75,27 @@ function handleFormInputActivity(event) {
           submitButton.disabled = false;
         }
       }
-    }
 
-  }
-
+    if(targetType === 'number') {
+       if(targetElement.name === 'card') {
+         if(!ccCheck.test(targetElement.value)) {
+           if(!errorEl) {
+             errorText += ' must be a valid credit card';
+             errorEl = document.createElement('p');
+             errorEl.className = errorClass;
+             errorEl.innerText = errorText;
+             targetElement.before(errorEl);
+             submitButton.disabled = true;
+           }
+         } else {
+           if (errorEl) {
+             errorEl.remove();
+             submitButton.disabled = false;
+           }
+         }
+       }
+}
+}
 function writeFormDataToLocalStorage(formName, inputElement) {
     var formData = findOrCreateLocalStorageObject(formName);
 
