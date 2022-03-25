@@ -20,9 +20,6 @@ h1 {
   border-radius: 1em;
   line-height: 2.2em;
 }
-p {
-   font-size: 0.65em;
-}
 
 a,b {
   font-family: inherit;
@@ -145,17 +142,13 @@ aside2-r {
   left: 0em;
   }
 
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
 
 
 input[type="submit"] {
   top: 10em;
   margin: 0 auto;
 }
-  }
+
 
 /* Buttons */
 .pbutton {

@@ -48,19 +48,21 @@ function handleFormInputActivity(event) {
   var targetElement = event.target;
   var targetType = targetElement.getAttribute('type');
   var errorText = capitalizeFirstLetter(targetElement.name);
-  var submitButton = document.getElementById('pbutton');
+  var submitButton = document.getElementById('.pbutton');
   var errorClass = targetElement.name + '-error';
   var errorEl = document.querySelector('.' + errorClass);
 
   var cvvCheck = /^[0-9]{3,4}$/;
   var zipCheck = /^\d{5}(?:[-\s]\d{4})?$/;
 
-  if (!inputElements.includes(targetElement.tagName) || targetElement.name === 'billing-address-two' || targetElement.name === 'shipping-address-two' || targetElement.name === 'billing-city' || targetElement.name === 'shipping-city') {
+  if (!inputElements.includes(targetElement.tagName) || targetElement.name === 'ship' || targetElement.name === 'bill' || targetElement.name === 'zip') {
     return; // this is not an element we care about
 
     // Security Code
     if(targetElement.tagName === 'sec') {
+      //window.alert("sec");
       if (targetElement.value.length < 3) {
+        //window.alert("3");
         // Don't add duplicate errors
         if (!errorEl) {
           errorText += ' Too short! Invalid';
@@ -98,14 +100,16 @@ function handleFormInputActivity(event) {
 }
 // Zip Code
 if(targetElement.name === '' || targetElement.name === 'zip') {
-  if(!zipCheck.test(targetElement.value)) {
-    if(!errorEl) {
-      errorText += ' must be a valid ZIP code';
-      errorEl.className = errorClass;
-      errorEl.innerText = errorText;
-      targetElement.before(errorEl);
-      submitButton.disabled = true;
-    }
+  if (targetElement.value.length != 5) {
+    if(!zipCheck.test(targetElement.value)) {
+      window.alert("bro");
+      if(!errorEl) {
+        errorText += ' must be a valid ZIP code';
+        errorEl.className = errorClass;
+        errorEl.innerText = errorText;
+        targetElement.before(errorEl);
+        submitButton.disabled = true;
+      }
   } else {
     if (errorEl) {
       errorEl.remove();
@@ -113,8 +117,12 @@ if(targetElement.name === '' || targetElement.name === 'zip') {
     }
   }
 }
+}
 
 }
+
+}
+
 function writeFormDataToLocalStorage(formName, inputElement) {
     var formData = findOrCreateLocalStorageObject(formName);
 
@@ -200,5 +208,4 @@ function writeFormDataToLocalStorage(formName, inputElement) {
   event.preventDefault(); // STOP the default browser behavior
   writeFormDataToLocalStorage(targetElement.name); // STORE all the form data
   window.location.href = targetElement.action; // PROCEED to the URL referenced by the form action
-}
 }
