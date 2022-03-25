@@ -58,11 +58,12 @@ function handleFormInputActivity(event) {
   if (!inputElements.includes(targetElement.tagName) || targetElement.name === 'billing-address-two' || targetElement.name === 'shipping-address-two' || targetElement.name === 'billing-city' || targetElement.name === 'shipping-city') {
     return; // this is not an element we care about
 
+    // Security Code
     if(targetElement.tagName === 'sec') {
       if (targetElement.value.length < 3) {
         // Don't add duplicate errors
         if (!errorEl) {
-          errorText += ' must be at least 3 characters';
+          errorText += ' Too short! Invalid';
           errorEl = document.createElement('p');
           errorEl.className = errorClass;
           errorEl.innerText = errorText;
@@ -75,12 +76,13 @@ function handleFormInputActivity(event) {
           submitButton.disabled = false;
         }
       }
-
+    }
+    // Card
     if(targetType === 'number') {
        if(targetElement.name === 'card') {
          if(!ccCheck.test(targetElement.value)) {
            if(!errorEl) {
-             errorText += ' Must be a valid credit card';
+             errorText += 'Must be a valid credit card';
              errorEl = document.createElement('p');
              errorEl.className = errorClass;
              errorEl.innerText = errorText;
@@ -95,6 +97,25 @@ function handleFormInputActivity(event) {
          }
        }
 }
+// Zip Code
+if(targetElement.name === '' || targetElement.name === 'zip') {
+  if(!zipCheck.test(targetElement.value)) {
+    if(!errorEl) {
+      errorText += ' must be a valid ZIP code';
+      errorEl = document.createElement('p');
+      errorEl.className = errorClass;
+      errorEl.innerText = errorText;
+      targetElement.before(errorEl);
+      submitButton.disabled = true;
+    }
+  } else {
+    if (errorEl) {
+      errorEl.remove();
+      submitButton.disabled = false;
+    }
+  }
+}
+
 }
 function writeFormDataToLocalStorage(formName, inputElement) {
     var formData = findOrCreateLocalStorageObject(formName);
