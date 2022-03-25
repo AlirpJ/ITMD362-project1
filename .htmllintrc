@@ -36,3 +36,4 @@
     "tag-self-close": "always", // tags like <meta> must self-close: <meta />
     "title-no-dup": true // only one <title> element in <head>
 }
+#
