@@ -58,7 +58,7 @@ function handleFormInputActivity(event) {
   if (!inputElements.includes(targetElement.tagName) || targetElement.name === 'billing-address-two' || targetElement.name === 'shipping-address-two' || targetElement.name === 'billing-city' || targetElement.name === 'shipping-city') {
     return; // this is not an element we care about
 
-    if(targetType === 'number' && targetElement.tagName === 'sec') {
+    if(targetElement.tagName === 'sec') {
       if (targetElement.value.length < 3) {
         // Don't add duplicate errors
         if (!errorEl) {
@@ -80,7 +80,7 @@ function handleFormInputActivity(event) {
        if(targetElement.name === 'card') {
          if(!ccCheck.test(targetElement.value)) {
            if(!errorEl) {
-             errorText += ' must be a valid credit card';
+             errorText += ' Must be a valid credit card';
              errorEl = document.createElement('p');
              errorEl.className = errorClass;
              errorEl.innerText = errorText;
