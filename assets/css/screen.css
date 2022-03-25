@@ -145,20 +145,16 @@ aside2-r {
   left: 0em;
   }
 
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+
 input[type="submit"] {
   top: 10em;
   margin: 0 auto;
 }
-
-#container {
-    justify-content: center;
-    display: grid;
-    background-color: #cc0000;
-    opacity: 0.33;
-    margin: 2em;
-    padding: 2em;
-    width: 1em;
-    height: 1em;
   }
 
 /* Buttons */

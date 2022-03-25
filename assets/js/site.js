@@ -1,4 +1,4 @@
-
+'use strict';
 
 var html = document.querySelector('html');
 
@@ -11,7 +11,7 @@ if(html.id === 'shipping') {
   restoreFormDataFromLocalStorage(formShip.name);
   formShip.addEventListener('input', debounce(handleFormInputActivity, 850));
   formShip.addEventListener('change', handleFormInputActivity);
-  formShip.addEventListener('submit', handleFormSubmission);
+  formShip.addEventListener('pbutton', handleFormSubmission);
 
   newAddressFieldset = document.querySelector('fieldset[name="shipping-address"]');
   newAddressCheckbox = document.querySelector('#shipping-is-billing');
@@ -36,7 +36,7 @@ if(html.id === 'billing') {
   restoreFormDataFromLocalStorage(formPayment.name);
   formPayment.addEventListener('input', debounce(handleFormInputActivity, 850));
   formPayment.addEventListener('change', handleFormInputActivity);
-  formPayment.addEventListener('submit', handleFormSubmission);
+  formPayment.addEventListener('pbutton', handleFormSubmission);
 }
 
 /*
@@ -48,7 +48,7 @@ function handleFormInputActivity(event) {
   var targetElement = event.target;
   var targetType = targetElement.getAttribute('type');
   var errorText = capitalizeFirstLetter(targetElement.name);
-  var submitButton = document.getElementById('submit');
+  var submitButton = document.getElementById('pbutton');
   var errorClass = targetElement.name + '-error';
   var errorEl = document.querySelector('.' + errorClass);
 
@@ -64,7 +64,7 @@ function handleFormInputActivity(event) {
         // Don't add duplicate errors
         if (!errorEl) {
           errorText += ' Too short! Invalid';
-          errorEl = document.createElement('p');
+
           errorEl.className = errorClass;
           errorEl.innerText = errorText;
           targetElement.before(errorEl);
@@ -83,7 +83,6 @@ function handleFormInputActivity(event) {
          if(!ccCheck.test(targetElement.value)) {
            if(!errorEl) {
              errorText += 'Must be a valid credit card';
-             errorEl = document.createElement('p');
              errorEl.className = errorClass;
              errorEl.innerText = errorText;
              targetElement.before(errorEl);
@@ -102,7 +101,6 @@ if(targetElement.name === '' || targetElement.name === 'zip') {
   if(!zipCheck.test(targetElement.value)) {
     if(!errorEl) {
       errorText += ' must be a valid ZIP code';
-      errorEl = document.createElement('p');
       errorEl.className = errorClass;
       errorEl.innerText = errorText;
       targetElement.before(errorEl);
